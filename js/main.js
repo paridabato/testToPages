@@ -1,4 +1,40 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
+    const toggleButton = document.querySelector('.toggle-menu')
+    const mobileMenu = document.querySelector('.mobile-menu')
+    const menu = document.querySelector('.menu')
+    const btnCLose = document.querySelector('.btn-close')
+    const menuLinks =document.querySelectorAll('.partnership-programs__nav-link')
+
+    function onHandleToggleMenu () {
+        toggleButton.addEventListener('click',(e)=>{
+            mobileMenu.classList.toggle('is-active')
+            menu.classList.toggle('is-active')
+        })
+
+        menu.addEventListener('click',(e)=>{
+
+            const isMenuClicked = mobileMenu.contains(e.target);
+            console.log(isMenuClicked)
+
+            if(!isMenuClicked) {
+                menu.classList.remove('is-active')
+            }
+
+        })
+
+        btnCLose.addEventListener('click',()=>{
+            menu.classList.remove('is-active')
+        })
+
+        menuLinks.forEach( el => el.addEventListener('click',()=>{
+            menu.classList.remove('is-active')
+        }))
+
+
+    }
+
+    onHandleToggleMenu ()
+
     const counters = document.querySelectorAll('.cpa-program-advantages__body-title span')
     const firstCounter = document.querySelector('.cpa-program-advantages__item:first-child')
 
@@ -41,11 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-
     gsap.to(".hero-img-1", {
         scrollTrigger: {
             start: "top bottom",
@@ -62,7 +93,6 @@ window.addEventListener('DOMContentLoaded', () => {
         y: -100,
     })
 
-
     gsap.to(".profit-icons", {
         scrollTrigger: {
             start: "top bottom",
@@ -70,9 +100,6 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         y: 60,
     })
-
-
-
 
     ScrollTrigger.matchMedia({
         '(min-width:768px)': function () {
@@ -130,12 +157,49 @@ window.addEventListener('DOMContentLoaded', () => {
 
         },
 
+    })
+
+
+    const firstStep = document.querySelector('.partnership-programs-step__img-container:first-child');
+    const progressBar = document.querySelectorAll('.partnership-programs-step__progress svg circle');
+    const stepCounters =document.querySelectorAll('.step-counter');
+
+
+    window.addEventListener('scroll',stepCounter)
+
+    function hasReached (el) {
+        if(el === null)
+            return false
+        const topPosition = el.getBoundingClientRect().top
+
+        if(window.innerHeight >= topPosition + el.offsetHeight) {
+            return true
+        } else {
+            return false
+        }
     }
-    )
+
+    function stepCounter () {
+        if(!hasReached(firstStep)) return
+
+        stepCounters.forEach( (counter ,i)=> {
+            let target = +counter.dataset.target
+
+            if(window.innerWidth >= 575) {
+                let strokeValue = 271 - 271 * (target / 100);
+                progressBar[i].style.setProperty("--target", strokeValue)
+            } else {
+                let strokeValue = 428 - 428 * (target / 100);
+                progressBar[i].style.setProperty("--target", strokeValue)
+            }
+
+        } )
+        progressBar.forEach((el )=> (el.style.animation = "progress 2s ease-in-out forwards"))
+    }
 
 })
 
-$(document).ready(function () {
+$( window ).on( "load",function () {
     const currentButton = $('.partnership-programs-plans__btn-container .btn-base')
     currentButton.hover(function () {
 
@@ -232,9 +296,6 @@ $(document).ready(function () {
     }
     collapsed()
 
-})
-
-$(document).ready(function () {
     // plans carousel//
     $('.owl-carousel-price').owlCarousel({
         loop: false,
