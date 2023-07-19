@@ -10,6 +10,25 @@ body {
   background-color: var(--light);
 }
 
+:root {
+  --light: #fff;
+  --blue-100: #f9faff;
+  --blue-150: #dcefff;
+  --blue-500: #42a5f5;
+  --blue-700: #008af9;
+  --blue-800: #4a89f2;
+  --blue-900: #05529e;
+  --red-100: #ffdddc;
+  --red-300: #ec5350;
+  --red-500: #e53935;
+  --green-100: #c8f3e5;
+  --green-500: #4cd7ab;
+  --green-700: #1effb8;
+  --dark-300: #939393;
+  --dark-400: #4b4b4b;
+  --dark-500: #232323;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -230,7 +249,7 @@ img {
   bottom: 0;
   left: 0;
   content: "";
-  width: 0;
+  width: 0%;
   height: 5px;
   background-color: var(--blue-500);
   transform: translateY(41px);
@@ -306,7 +325,7 @@ img {
   padding: 40px 30px;
   border: 1px solid #E3EFFD;
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 31px 47px 100px -10px rgba(0, 0, 0, 0.04);
   margin-top: 50px;
@@ -1186,9 +1205,9 @@ img {
 }
 .menu.is-active .mobile-menu {
   -webkit-animation-name: slideLeft;
-          animation-name: slideLeft;
+  animation-name: slideLeft;
   -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
 
 .mobile-menu__buttons {
@@ -1300,7 +1319,7 @@ img {
     margin-right: 20px;
   }
   .partnership-programs-award__item:nth-child(-n+2),
-.partnership-programs-advantages__item:nth-child(-n+2) {
+  .partnership-programs-advantages__item:nth-child(-n+2) {
     margin-bottom: 20px;
   }
   .partnership-programs-award__list {
@@ -1401,7 +1420,7 @@ img {
   }
   .partnership-programs-advantages__list {
     -moz-column-gap: 20%;
-         column-gap: 20%;
+    column-gap: 20%;
   }
   .partnership-programs-award__list {
     display: grid;
@@ -1441,9 +1460,9 @@ img {
     flex: unset;
   }
   .partnership-programs-features__item:nth-child(4):hover,
-.partnership-programs-features__item:first-child:hover,
-.partnership-programs-features__item:focus,
-.partnership-programs-features__item:hover {
+  .partnership-programs-features__item:first-child:hover,
+  .partnership-programs-features__item:focus,
+  .partnership-programs-features__item:hover {
     box-shadow: unset;
     transform: unset;
   }
@@ -1528,7 +1547,7 @@ img {
     padding: 50px 0;
   }
   .btn-base-small,
-.btn-base-lg {
+  .btn-base-lg {
     padding: 8px 20px;
   }
   .partnership-programs-award__list {
@@ -1567,12 +1586,12 @@ img {
     align-items: center;
   }
   .partnership-programs-plans__header,
-.partnership-programs-hero__header,
-.partnership-programs-advantages__item,
-.partnership-programs-benefits__header-title,
-.partnership-programs-performance__header,
-.partnership-programs-features__title,
-.partnership-programs-award__title {
+  .partnership-programs-hero__header,
+  .partnership-programs-advantages__item,
+  .partnership-programs-benefits__header-title,
+  .partnership-programs-performance__header,
+  .partnership-programs-features__title,
+  .partnership-programs-award__title {
     text-align: center;
   }
   .partnership-programs-benefits__item {
@@ -1591,17 +1610,17 @@ img {
     color: var(--light);
   }
   .card-body-description,
-.partnership-programs-advantages__body-text,
-.partnership-programs-plans__body-text,
-.partnership-programs-banner__header-text,
-.partnership-programs-step__body-text,
-.partnership-programs-privilege__body-text,
-.partnership-programs-privilege__header-description,
-.partnership-programs-performance__header-description,
-.partnership-programs-features__item-list-text,
-.card-body-description,
-.partnership-programs-award__body-name,
-.partnership-programs-hero__header-description {
+  .partnership-programs-advantages__body-text,
+  .partnership-programs-plans__body-text,
+  .partnership-programs-banner__header-text,
+  .partnership-programs-step__body-text,
+  .partnership-programs-privilege__body-text,
+  .partnership-programs-privilege__header-description,
+  .partnership-programs-performance__header-description,
+  .partnership-programs-features__item-list-text,
+  .card-body-description,
+  .partnership-programs-award__body-name,
+  .partnership-programs-hero__header-description {
     font-size: 0.813rem;
     line-height: 20px;
   }
@@ -1653,7 +1672,7 @@ img {
     line-height: 20px;
   }
   .card-header,
-.card-body {
+  .card-body {
     padding: 20px;
   }
   .partnership-programs-banner__wrapper {
@@ -1670,14 +1689,14 @@ img {
     height: 20px;
   }
   .partnership-programs-step__title,
-.partnership-programs-privilege__header,
-.partnership-programs-benefits__header,
-.partnership-programs-features__title,
-.partnership-programs-plans__title {
+  .partnership-programs-privilege__header,
+  .partnership-programs-benefits__header,
+  .partnership-programs-features__title,
+  .partnership-programs-plans__title {
     margin-bottom: 30px;
   }
   .partnership-programs-performance__header > *,
-.partnership-programs-privilege__header-title {
+  .partnership-programs-privilege__header-title {
     margin-bottom: 1em;
   }
   .partnership-programs-plans__body {
@@ -1738,7 +1757,7 @@ img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .partnership-programs-performance__header {
     margin-top: 30px;
@@ -1774,13 +1793,13 @@ img {
     width: 90%;
   }
   .owl-item:first-child .partnership-programs-features__item-body img,
-.owl-item:last-child .partnership-programs-features__item-body img,
-.owl-item:nth-child(5) .partnership-programs-features__item-body img {
+  .owl-item:last-child .partnership-programs-features__item-body img,
+  .owl-item:nth-child(5) .partnership-programs-features__item-body img {
     bottom: 0;
     top: unset;
   }
   .owl-item:nth-child(2) .partnership-programs-features__item-body img,
-.owl-item:nth-child(3) .partnership-programs-features__item-body img {
+  .owl-item:nth-child(3) .partnership-programs-features__item-body img {
     bottom: -14px;
     top: unset;
   }
@@ -1793,6 +1812,7 @@ img {
     background-size: 360px;
   }
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 body {
@@ -2365,8 +2385,8 @@ img {
 
 .cpa-program-why__img-container img {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 0%;
+  top: 0%;
   right: 0;
   bottom: 0;
   z-index: auto;

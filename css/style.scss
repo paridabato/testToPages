@@ -313,7 +313,7 @@ img {
     bottom: 0;
     left: 0;
     content: "";
-    width: 0;
+    width: 0%;
     height: 5px;
     background-color: var(--blue-500);
 
@@ -2242,7 +2242,6 @@ img {
         background-size: 360px;
     }
 }
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
@@ -2266,6 +2265,28 @@ body {
     line-height: 30px;
     color: var(--dark-500);
     background-color: var(--light);
+}
+
+:root {
+    --light: #fff;
+    --blue-100: #f9faff;
+    --blue-150: #dcefff;
+    --blue-500: #42a5f5;
+    --blue-700: #008af9;
+    --blue-800: #4a89f2;
+    --blue-900: #05529e;
+
+    --red-100: #ffdddc;
+    --red-300: #ec5350;
+    --red-500: #e53935;
+
+    --green-100: #c8f3e5;
+    --green-500: #4cd7ab;
+    --green-700: #1effb8;
+
+    --dark-300: #939393;
+    --dark-400: #4b4b4b;
+    --dark-500: #232323;
 }
 
 html {
@@ -2306,6 +2327,26 @@ img {
 
 .text-gradient {
     color: var(--blue-500);
+}
+
+.btn-base {
+    @extend %link-defaults;
+    display: inline-block;
+    border-radius: 5px;
+    color: var(--light);
+    border: 1px solid transparent;
+    text-transform: capitalize;
+
+    outline: none;
+    box-shadow: none;
+
+    @extend %base-transition;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: none;
+        outline: none;
+    }
 }
 
 .btn-blue-white {

@@ -357,27 +357,29 @@ $( window ).on( "load",function () {
 
 
     //splide//
-    new Splide('#splide-first', {
-        type: 'loop',
-        drag: 'free',
-        focus: 'center',
-        perPage: 3,
-        pagination: false,
-        arrows: false,
-        dots: false,
-        autoScroll: {
-            speed: 1,
-        },
-        breakpoints: {
+    if($('#splide-first').length){
+        new Splide('#splide-first', {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            perPage: 3,
+            pagination: false,
+            arrows: false,
+            dots: false,
+            autoScroll: {
+                speed: 1,
+            },
+            breakpoints: {
 
-            575: {
-                perPage: 2,
-            },
-            320: {
-                perPage: 1,
-            },
-        }
-    }).mount(window.splide.Extensions);
+                575: {
+                    perPage: 2,
+                },
+                320: {
+                    perPage: 1,
+                },
+            }
+        }).mount(window.splide.Extensions);
+    }
 
 })
 
