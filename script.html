@@ -7,9 +7,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
+<script src="js/splide.js"></script>
+<script src="js/auto-scroll.js"></script>
+
 <script src="js/step.js"></script>
 <script src="js/mobile-menu.js"></script>
 <script src="js/owl.carousel.min.js"></script>
+
+<script src="js/main.js"></script>
+
 <script>
 
     $(document).ready(function () {
@@ -110,4 +116,93 @@
         collapsed()
 
     })
+</script>
+
+<script>
+    $(document).ready(function () {
+        // plans carousel//
+        $('.owl-carousel-price').owlCarousel({
+            loop: false,
+            margin: 30,
+            stagePadding: 50,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                    margin: 10,
+                },
+                600: {
+                    items: 1
+                },
+
+            }
+        })
+
+        // plans benefits//
+        $('.owl-carousel-benefits').owlCarousel({
+            loop: false,
+            margin: 20,
+            stagePadding: 50,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                    margin: 10,
+                },
+                600: {
+                    items: 1
+                },
+
+            }
+        })
+
+        // plans benefits//
+        $('.owl-carousel-why').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 20,
+                },
+                600: {
+                    items: 1,
+                    nav: false,
+                },
+
+            }
+        })
+
+
+        //splide//
+        new Splide('#splide-first', {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            perPage: 3,
+            pagination: false,
+            arrows: false,
+            dots: false,
+            autoScroll: {
+                speed: 1,
+            },
+            breakpoints: {
+
+                575: {
+                    perPage: 2,
+                },
+                320: {
+                    perPage: 1,
+                },
+            }
+        }).mount(window.splide.Extensions);
+
+    })
+
 </script>
