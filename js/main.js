@@ -35,9 +35,11 @@ window.addEventListener('load', () => {
 
     }
 
-    window.addEventListener("scroll", stepCounter);
+    window.addEventListener("scroll", stepCounter1);
 
-    function hasReached(el) {
+    function hasReached1(el) {
+        if(el === null)
+            return false;
         const topPosition = el.getBoundingClientRect().top;
 
         if (window.innerHeight >= topPosition + el.offsetHeight) {
@@ -47,8 +49,8 @@ window.addEventListener('load', () => {
         }
     }
 
-    function stepCounter() {
-        if (!hasReached(firstStep1)) return;
+    function stepCounter1() {
+        if (!hasReached1(firstStep1)) return;
 
         stepCounters1.forEach((counter, i) => {
             let target = +counter.dataset.target;
@@ -271,7 +273,8 @@ window.addEventListener('load', () => {
 
     }
 
-    renderStartNumber()
+    if(document.querySelector('.range-input') !== null)
+        renderStartNumber()
 
 
     const toggleButton = document.querySelector('.toggle-menu')
@@ -317,7 +320,7 @@ window.addEventListener('load', () => {
         benefitsCounter()
     })
 
-    function hasReached(el) {
+    function hasReached2(el) {
         let top = el.getBoundingClientRect().top
         console.log(top)
 
@@ -337,7 +340,7 @@ window.addEventListener('load', () => {
     }
 
     function benefitsCounter() {
-        if (!hasReached) return false
+        if (!hasReached2) return false
 
         counters.forEach(el => {
             let target = el.dataset.target
@@ -472,9 +475,9 @@ window.addEventListener('load', () => {
     const stepCounters2 =document.querySelectorAll('.step-counter');
 
 
-    window.addEventListener('scroll',stepCounter)
+    window.addEventListener('scroll',stepCounter2)
 
-    function hasReached (el) {
+    function hasReached2 (el) {
         if(el === null)
             return false
         const topPosition = el.getBoundingClientRect().top
@@ -486,8 +489,8 @@ window.addEventListener('load', () => {
         }
     }
 
-    function stepCounter () {
-        if(!hasReached(firstStep2)) return
+    function stepCounter2 () {
+        if(!hasReached2(firstStep2)) return
 
         stepCounters2.forEach( (counter ,i)=> {
             let target = +counter.dataset.target
