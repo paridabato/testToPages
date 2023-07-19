@@ -10,25 +10,6 @@ body {
   background-color: var(--light);
 }
 
-:root {
-  --light: #fff;
-  --blue-100: #f9faff;
-  --blue-150: #dcefff;
-  --blue-500: #42a5f5;
-  --blue-700: #008af9;
-  --blue-800: #4a89f2;
-  --blue-900: #05529e;
-  --red-100: #ffdddc;
-  --red-300: #ec5350;
-  --red-500: #e53935;
-  --green-100: #c8f3e5;
-  --green-500: #4cd7ab;
-  --green-700: #1effb8;
-  --dark-300: #939393;
-  --dark-400: #4b4b4b;
-  --dark-500: #232323;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -249,7 +230,7 @@ img {
   bottom: 0;
   left: 0;
   content: "";
-  width: 0%;
+  width: 0;
   height: 5px;
   background-color: var(--blue-500);
   transform: translateY(41px);
@@ -2384,8 +2365,8 @@ img {
 
 .cpa-program-why__img-container img {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
   z-index: auto;
